@@ -53,7 +53,7 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-
+    /* 修复了URL末尾多余的单引号 */
     background: url('https://cdn.phototourl.com/free/2026-04-26-9c365ed9-12d3-422a-a9be-1074287e1b67.jpg') center/cover no-repeat;
 }
 
@@ -260,25 +260,25 @@ body {
 
     <div class="grid">
 
-        <a class="card a" href="J1h.html">
+        <a class="card a" href="J1h.html ">
             <h3>「黄油世界」</h3>
             <p>海量汉化游戏等你来玩</p >
-        </a>
+        </a >
 
-        <a class="card b"href="J2d.html">
+        <a class="card b" href="J2d.html">
             <h3>「动漫里番」</h3>
             <p>高清无修福利姬</p >
-        </a>
+        </a >
 
-        <a class="card c"href="J3.html">
+        <a class="card c" href="J3.html">
             <h3>「漫画天地」</h3>
             <p>高清全彩漫画</p >
-        </a>
+        </a >
 
-        <a class="card d"href="J4.html">
+        <a class="card d" href="J4.html">
             <h3>「在线小说」</h3>
             <p>轻小说/同人本</p >
-        </a>
+        </a >
 
     </div>
 
@@ -301,8 +301,7 @@ document.querySelectorAll("a").forEach(link => {
       
         document.body.style.transition = "0.25s ease";
         document.body.style.transform = "scale(0.98)";
-        document.body.style.filter = "blur(2px)";
-
+        
         
         setTimeout(() => {
             window.location.href = href;
@@ -316,8 +315,7 @@ window.addEventListener("pageshow", function () {
     }
 
     document.body.style.opacity = "1";
-    document.body.style.transform = "scale(1)";
-    document.body.style.filter = "none";
+    document.body.style.transform = "scale(1)";    
 });
 </script>
 </body>
