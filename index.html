@@ -309,6 +309,16 @@ document.querySelectorAll("a").forEach(link => {
         }, 700);
     });
 });
+window.addEventListener("pageshow", function () {
+    const loading = document.getElementById("loading");
+    if (loading) {
+        loading.classList.remove("active");
+    }
+
+    document.body.style.opacity = "1";
+    document.body.style.transform = "scale(1)";
+    document.body.style.filter = "none";
+});
 </script>
 </body>
 </html>
