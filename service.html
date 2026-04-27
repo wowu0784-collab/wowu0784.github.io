@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我的客服历史对话</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f8fa; 
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+       
+        .top-bar {
+            height: 50px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            padding: 0 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 100;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 15px;
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            border-radius: 50%;
+            transition: color 0.2s, background-color 0.2s;
+        }
+       
+        .back-btn:active {
+            color: #ff69b4;
+            background-color: rgba(255, 105, 180, 0.1);
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .content-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .empty-text {
+            font-size: 16px;
+            color: #999; 
+            line-height: 1.6;
+        }
+    
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .fab-btn {
+            background: linear-gradient(90deg, #ff69b4, #ff85c0); 
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3); 
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+
+        .fab-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
+        }
+
+        .fab-icon {
+            font-size: 20px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="top-bar">
+        <div class="back-btn" onclick="handleBack()">
+            
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </div>
+        <div class="page-title">我的客服历史对话</div>
+    </div>
+    
+    <div class="content-area">
+        <div class="empty-text">无历史客服对话，请点击右下角联系客服</div>
+    </div>
+  
+    <div class="fab-container">
+        <button class="fab-btn" onclick="createNewChat()">
+            <span class="fab-icon">+</span>
+            新建对话
+        </button>
+    </div>
+
+      <script>
+    function handleBack() {
+        window.location.href = "user.html";
+    }
+      </script>
+<script>
+function createNewChat() {
+    window.location.href = "new chat.html";
+}
+</script>
+
+</body>
+</html>
