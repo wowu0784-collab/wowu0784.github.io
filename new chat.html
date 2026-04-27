@@ -186,40 +186,39 @@
         <button class="submit-btn" onclick="submitForm()">确定提交</button>
     </div>
 
-      <script>
+     <script>
 function goBack() {
     if(confirm("确定要放弃编辑并返回吗？")) {
         window.location.href = "service.html";
     }
 }
+
+function updateWordCount() {
+    const textarea = document.getElementById('description');
+    const countSpan = document.getElementById('count');
+    countSpan.innerText = textarea.value.length;
+}
+
+function handleSelectChange() {
+    const select = document.getElementById('issueType');
+    console.log("选择了:", select.options[select.selectedIndex].text);
+}
+
+function submitForm() {
+    const type = document.getElementById('issueType').value;
+    const desc = document.getElementById('description').value;
+
+    if (!type) {
+        alert("请先选择问题类型");
+        return;
+    }
+    if (!desc.trim()) {
+        alert("请填写问题具体描述");
+        return;
+    }
+
+    alert("提交成功！客服将在24小时内回复您。");
+}
 </script>
-             
-        function updateWordCount() {
-            const textarea = document.getElementById('description');
-            const countSpan = document.getElementById('count');
-            countSpan.innerText = textarea.value.length;
-        }
-        
-        function handleSelectChange() {
-            const select = document.getElementById('issueType');
-            console.log("选择了:", select.options[select.selectedIndex].text);
-        }
-        
-        function submitForm() {
-            const type = document.getElementById('issueType').value;
-            const desc = document.getElementById('description').value;
-
-            if (!type) {
-                alert("请先选择问题类型");
-                return;
-            }
-            if (!desc.trim()) {
-                alert("请填写问题具体描述");
-                return;
-            }
-
-            alert("提交成功！客服将在24小时内回复您。");
-        }
-    </script>
 </body>
 </html>
