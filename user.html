@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>用户中心</title>
+    <style>        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f6fa;
+            color: #333;         
+            padding-bottom: 70px; 
+        }
+       
+        .header {
+            padding: 20px 20px 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .login-card {
+            margin: 15px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .login-card:active {
+            background-color: #f0f0f0;
+        }
+
+        .avatar-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .login-info {
+            flex: 1;
+        }
+
+        .login-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .login-subtitle {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .arrow {
+            color: #ccc;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .vip-btn-container {
+            padding: 0 15px 20px;
+            text-align: center;
+        }
+
+        .vip-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 0;
+            background-color: #FFB7C5;
+            color: #333333;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 25px;
+            border: none;
+            box-shadow: 0 4px 10px rgba(255, 183, 197, 0.4);
+            cursor: pointer;
+            outline: none;
+            line-height: 1.4;
+        }
+
+        .vip-btn:active {
+            opacity: 0.8;
+            transform: scale(0.98);
+        }
+
+        .vip-subtitle {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            font-weight: normal;
+            color: #333333;
+            opacity: 0.8;
+        }
+     
+        .menu-section {
+            margin: 0 15px;
+        }
+
+        .menu-list {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background-color: #fff;
+            position: relative;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu-item:active {
+            background-color: #f9f9f9;
+        }
+
+        .menu-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .menu-text {
+            font-size: 16px;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .menu-arrow {
+            color: #ccc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .menu-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 60px;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background-color: #f0f0f0;
+        }
+       
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 999;
+        }
+
+        .nav-item {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;      
+            color: #000000; 
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-item:active {
+            background-color: #f9f9f9;
+        }
+      
+        .nav-item.active {        
+            color: #999999; 
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>   
+    <header class="header">
+        用户中心
+    </header>
+    
+    <div class="login-card" onclick="alert('跳转至登录页')">
+        <div class="avatar-box">👤</div>
+        <div class="login-info">
+            <div class="login-title">点击登录</div>
+            <div class="login-subtitle">登录后可同步数据与积分</div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+  
+    <div class="vip-btn-container">
+        <button class="vip-btn" onclick="alert('跳转至会员开通页')">
+            立即开通会员
+            <span class="vip-subtitle">尊享特权，限时优惠</span>
+        </button>
+    </div>  
+    <div class="menu-section">
+        <div class="menu-list">            
+            <div class="menu-item" onclick="alert('跳转至我的收藏')">
+                <div class="menu-icon-box" style="background-color: #FF9A9E;">❤️</div>
+                <span class="menu-text">我的收藏</span>
+                <span class="menu-arrow">›</span>
+            </div>
+            
+            <div class="menu-item" onclick="alert('跳转至消息通知')">
+                <div class="menu-icon-box" style="background-color: #A18CD1;">🔔</div>
+                <span class="menu-text">消息通知</span>
+                <span class="menu-arrow">›</span>
+            </div>
+            
+            <div class="menu-item" onclick="alert('跳转至联系客服')">
+                <div class="menu-icon-box" style="background-color: #FBC2EB;">🎧</div>
+                <span class="menu-text">联系客服</span>
+                <span class="menu-arrow">›</span>
+            </div>
+           
+            <div class="menu-item" onclick="alert('跳转至设置中心')">
+                <div class="menu-icon-box" style="background-color: #8FD3F4;">⚙️</div>
+                <span class="menu-text">设置中心</span>
+                <span class="menu-arrow">›</span>
+               </div>
+        </div>
+    </div>    
+    <nav class="bottom-nav">
+        <a href="index.html " class="nav-item">主页</a >            
+        <a href="#" class="nav-item active">我的</a >
+    </nav>
+</body>
+</html>
