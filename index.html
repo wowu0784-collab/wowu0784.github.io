@@ -182,6 +182,18 @@ body {
     .card h3 { font-size: 18px; }
     .card p { font-size: 11px; }
 }
+body {
+    opacity: 0;
+    transform: scale(0.98);
+    animation: pageIn 0.35s ease forwards;
+}
+
+@keyframes pageIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 </style>
 </head>
@@ -226,6 +238,24 @@ body {
     </div>
 
 </div>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
 
+        if (!href || href.startsWith('http')) return;
+
+        e.preventDefault();
+
+        document.body.style.transition = "all 0.25s ease";
+        document.body.style.opacity = "0";
+        document.body.style.transform = "scale(0.98)";
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 250);
+    });
+});
+</script>
 </body>
 </html>
