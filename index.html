@@ -313,6 +313,7 @@ body {
     </div>
 
 </div>
+
 <script>
 document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", function(e) {
@@ -324,28 +325,20 @@ document.querySelectorAll("a").forEach(link => {
 
         e.preventDefault();
 
-        
         const loading = document.getElementById("loading");
         loading.classList.add("active");
 
-      
-        document.body.style.transition = "0.25s ease";
-        document.body.style.transform = "scale(0.98)";
-        
-        
         setTimeout(() => {
             window.location.href = href;
-        }, 700);
+        }, 400);
     });
 });
+
 window.addEventListener("pageshow", function () {
     const loading = document.getElementById("loading");
     if (loading) {
         loading.classList.remove("active");
     }
-
-    document.body.style.opacity = "1";
-    document.body.style.transform = "scale(1)";    
 });
 </script>
 
